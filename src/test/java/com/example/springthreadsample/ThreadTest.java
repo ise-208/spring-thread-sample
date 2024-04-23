@@ -39,7 +39,7 @@ public class ThreadTest {
     }
 
     @Test
-    void Safeのスレッドを呼び出させてテストを失敗させる() throws InterruptedException {
+    void Safeのスレッドを呼び出させてテストを成功させる() throws InterruptedException {
         SafeCounterService safeCounterService = new SafeCounterService();
         ExecutorService executorService = Executors.newFixedThreadPool(thread);
         AtomicInteger successIncrement = new AtomicInteger();
