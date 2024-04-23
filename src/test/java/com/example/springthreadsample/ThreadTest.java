@@ -33,7 +33,6 @@ public class ThreadTest {
         System.out.println(thread);
         System.out.println(unsafeCounterService.getIncrementCount());
         System.out.println(successIncrement.get());
-
         assertEquals(unsafeCounterService.getIncrementCount(), successIncrement.get());
 
     }
@@ -52,14 +51,12 @@ public class ThreadTest {
                 }
             });
         }
-
         executorService.shutdown();
         executorService.awaitTermination(1, TimeUnit.MINUTES);
 
         System.out.println(thread);
         System.out.println(safeCounterService.getIncrementCount());
         System.out.println(successIncrement.get());
-
         assertEquals(safeCounterService.getIncrementCount(), successIncrement.get());
 
     }
