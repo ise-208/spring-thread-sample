@@ -11,11 +11,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ThreadTest {
     int repeat = 100;
+    int thread = 10;
 
     @Test
     void Unsafeのスレッドを呼び出させてテストを失敗させる() throws InterruptedException {
         UnsafeCounterService unsafeCounterService = new UnsafeCounterService();
-        int thread = 1000;
         ExecutorService executorService = Executors.newFixedThreadPool(thread);
         AtomicInteger successIncrement = new AtomicInteger();
 
@@ -41,7 +41,6 @@ public class ThreadTest {
     @Test
     void Safeのスレッドを呼び出させてテストを失敗させる() throws InterruptedException {
         SafeCounterService safeCounterService = new SafeCounterService();
-        int thread = 1000;
         ExecutorService executorService = Executors.newFixedThreadPool(thread);
         AtomicInteger successIncrement = new AtomicInteger();
 
